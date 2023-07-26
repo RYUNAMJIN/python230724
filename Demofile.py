@@ -24,13 +24,23 @@ print("{0:.2f}".format(4/3))
 
 
 #파일쓰기
-f = open("c:\\work\\demo.txt","wt", encoding="utf-8")
+f = open(r"c:\work\demo.txt","wt", encoding="utf-8")
 f.write("첫번째\n두번째\n세번째\n")
 f.close
 
 #파일열기
 f = open("c:\\work\\demo.txt","rt", encoding="utf-8")
 result = f.read()
+print("-----라인단위----")
+f.seek(0)
+print(f.readline(), end="")
+print(f.readline(), end="")
+print("---리스트로 받기---")
+f.seek(0)
+result = f.readlines()
+print(result)
+
+
 f.close()
 print(result)
 
